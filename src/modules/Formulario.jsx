@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react';
 
 function Formulario(){
-    const [nombre, setNombre] = useState('');
+    const [nombreMascota, setNombreMascota] = useState('');
+    const [nombrePropietario, setNombrePropietario] = useState('');
+    const [email, setEmail] = useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log('Enviando formulario');
@@ -15,18 +17,18 @@ function Formulario(){
             <form onSubmit={handleSubmit} action="" className="bg-white shadow-md rounded-lg py-10 px-5 mb-10 mx-10 mr-0">
                 <div className="mb-5">
                     <label htmlFor="nombreMascota" className="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
-                    <input value={nombre} onChange={(e)=> setNombre(e.target.value)} type="text" id="nombreMascota" placeholder="Nombre de la mascota" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
+                    <input value={nombreMascota} onChange={(e)=> setNombreMascota(e.target.value)} type="text" id="nombreMascota" placeholder="Nombre de la mascota" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
                 </div>
                 <div className="mb-5">
                     <label htmlFor="nombrePropietario" className="block text-gray-700 uppercase font-bold">Nombre Propietario</label>
-                    <input type="text" id="nombrePropietario" placeholder="Nombre de la mascota" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
+                    <input value={nombrePropietario} onChange={(e)=> setNombrePropietario(e.target.value)} type="text" id="nombrePropietario" placeholder="Nombre de la mascota" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
                 </div>
                 <div className="mb-5">
                     <label htmlFor="email" className="block text-gray-700 uppercase font-bold">Email del propietario</label>
-                    <input type="email" id="email" placeholder="Nombre de la mascota" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
+                    <input value={email} onChange={(e)=> setEmail(e.target.value)} type="email" id="email" placeholder="Nombre de la mascota" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
                 </div>
                 <div className="mb-5">
-                    <label htmlFor="alta" className="block text-gray-700 uppercase font-bold"></label>
+                    <label htmlFor="alta" className="block text-gray-700 uppercase font-bold">Dado de alta</label>
                     <input type="date" id="alta" placeholder="Nombre de la mascota" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
                 </div>
                 <div className="mb-5">
