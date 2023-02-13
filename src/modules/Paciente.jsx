@@ -5,7 +5,7 @@ const Pacientes = ()=>{
                 <span className="font-normal normal-case">Hook</span>
             </p>
             <p className="font-bold mb-3 text-gray-700 uppercase">Propietario:{' '}
-                <span className="font-normal normal-case">Andrés Murillo</span>
+                <span className="font-normal normal-case">Andrés Murillo Cortázar</span>
             </p>
             <p className="font-bold mb-3 text-gray-700 uppercase">Email:{' '}
                 <span className="font-normal normal-case">andresmurillo@outlook.com</span>
