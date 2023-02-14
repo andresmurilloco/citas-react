@@ -1,20 +1,21 @@
-const Paciente = ()=>{
+const Paciente = ({paciente})=>{
+    const {nombreMascota, nombrePropietario, email, fecha, sintomas} = paciente;
     return(
         <div className="m-3 bg-white shadow-mt px-5 py-10 rounded-sm">
             <p className="font-bold mb-3 text-gray-700 uppercase">Nombre:{' '}
-                <span className="font-normal normal-case">Hook</span>
+                <span className="font-normal normal-case">{nombreMascota}</span>
             </p>
             <p className="font-bold mb-3 text-gray-700 uppercase">Propietario:{' '}
-                <span className="font-normal normal-case">Andrés Murillo Cortázar</span>
+                <span className="font-normal normal-case">{nombrePropietario}</span>
             </p>
             <p className="font-bold mb-3 text-gray-700 uppercase">Email:{' '}
-                <span className="font-normal normal-case">andresmurillo@outlook.com</span>
+                <span className="font-normal normal-case">{email}</span>
             </p>
             <p className="font-bold mb-3 text-gray-700 uppercase">Fecha Alta:{' '}
-                <span className="font-normal normal-case">12 de Diciembre de 2022</span>
+                <span className="font-normal normal-case">{fecha}</span>
             </p>
             <p className="font-bold mb-3 text-gray-700 uppercase">Síntomas:{' '}
-                <span className="font-normal normal-case">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores beatae voluptatem deleniti incidunt sed, culpa numquam amet, quasi a odit recusandae unde laborum facilis hic vitae fugiat consequatur magnam in.</span>
+                <span className="font-normal normal-case">{sintomas}</span>
             </p>
         </div>
     )
