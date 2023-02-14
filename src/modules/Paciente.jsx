@@ -1,4 +1,4 @@
-const Pacientes = ()=>{
+const Paciente = ()=>{
     return(
         <div className="m-3 bg-white shadow-mt px-5 py-10 rounded-sm">
             <p className="font-bold mb-3 text-gray-700 uppercase">Nombre:{' '}
@@ -20,4 +20,4 @@ const Pacientes = ()=>{
     )
 }
 
-export default Pacientes;
+export default Paciente;

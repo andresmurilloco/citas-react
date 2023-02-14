@@ -1,6 +1,6 @@
-import Pacientes from "./Paciente";
+import Paciente from "./Paciente";
 
-function ListaPacientes(){
+function ListaPacientes(pacientes){
     return(
         <div className="md:w-1/2 md:h-screen overflow-y-scroll">
             <h2 className="font-black text-3xl text-center">Lista de pacientes</h2>
@@ -8,11 +8,7 @@ function ListaPacientes(){
                 Administra tus{' '}
                 <span className="text-indigo-600 font-bold text-xl">Pacientes y citas</span>
             </p>
-            <Pacientes></Pacientes>
-            <Pacientes></Pacientes>
-            <Pacientes></Pacientes>
-            <Pacientes></Pacientes>
-            <Pacientes></Pacientes>
+            <Paciente></Paciente>
         </div>
     )
 }
