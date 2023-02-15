@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import Error from './Error';
 
-function Formulario({pacientes, setPacientes, paciente}){
+function Formulario({pacientes, setPacientes, paciente, setPaciente}){
     const [nombreMascota, setNombreMascota] = useState('');
     const [nombrePropietario, setNombrePropietario] = useState('');
     const [email, setEmail] = useState('');
@@ -10,7 +10,15 @@ function Formulario({pacientes, setPacientes, paciente}){
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        console.log(paciente);
+        if(Object.keys(paciente).length>0){
+            setNombreMascota(paciente.nombreMascota);
+            setNombrePropietario(paciente.nombrePropietario);
+            setEmail(paciente.email);
+            setFecha(paciente.fecha);
+            setSintomas(paciente.sintomas);
+        } else {
+            console.log("No hay nada");
+        }
     }, [paciente])
 
     const generarId=()=>{
@@ -35,9 +43,17 @@ function Formulario({pacientes, setPacientes, paciente}){
                 email, 
                 fecha, 
                 sintomas,
-                id: generarId()
             }
-            setPacientes([...pacientes, objetoPaciente]);
+            
+            if(paciente.id){
+                objetoPaciente.id = paciente.id;
+                const pacienteActualizado = pacientes.map(pacienteState => pacienteState.id === paciente.id ? objetoPaciente:pacienteState);
+                setPacientes(pacienteActualizado);
+                setPaciente({})
+            } else{
+                objetoPaciente.id = generarId();
+                setPacientes([...pacientes, objetoPaciente]);
+            }
             setNombreMascota('');
             setNombrePropietario('');
             setEmail('');
@@ -74,7 +90,7 @@ function Formulario({pacientes, setPacientes, paciente}){
                     <label htmlFor="sintomas" autoComplete='false' className="block text-gray-700 uppercase font-bold">Síntomas</label>
                     <textarea value={sintomas} onChange={(e)=> setSintomas(e.target.value)} id="sintomas" placeholder="Describe los síntomas" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"></textarea>
                 </div>
-                <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all" value="Agregar Paciente"/>
+                <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all" value={paciente.id ? 'Editar Paciente':'Agregar Paciente'}/>
             </form>
         </div>
         
